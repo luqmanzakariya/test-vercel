@@ -1,0 +1,19 @@
+import React, { SVGProps } from "react";
+
+const PlusIcon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="14"
+      height="15"
+      viewBox="0 0 14 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M7 0.5V14.5" stroke="white" strokeWidth="1.4" />
+      <path d="M0 7.5L14 7.5" stroke="white" strokeWidth="1.4" />
+    </svg>
+  );
+};
+
+export default PlusIcon;

@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+=== Reference Font  ===
+primary: Afacad
+secondary: ABeeZee
+abril: Abril_Fatface
+
+=== Reference Color ===
+--blue-primary : #003049
+--black: #000000
+--black-2: #1F1F1F
+--black-3: #1F2224
+--black-4: #0F0F0F
+--orange: #FF6625
+--grey: #575757
+--grey-2: #D1D1D1
+--grey-3: #9D9D9D
+--cream: #FFF8F4
+--cream-2: #F5EDE8
+--white-2: #D6D6D6
+--red-error: #FF2730;
+*/
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --blue-primary: 0 48 73;
+  --black: 0 0 0;
+  --black-2: 31 31 31;
+  --black-3: 31 34 36;
+  --black-4: 15 15 15;
+  --orange: 255 102 37;
+  --grey: 87 87 87;
+  --grey-2: 209 209 209;
+  --grey-3: 157 157 157;
+  --cream: 255 248 244;
+  --cream-2: 245 237 232;
+  --white-2: 214 214 214;
+  --red-error: 255 39 48;
+}
+
+@layer components {
+  .nabar-items {
+    @apply font-primary text-bluePrimary text-[22px] lg:text-2xl font-bold leading-[32px] flex items-center gap-4;
+  }
+
+  .home-landing {
+    @apply bg-cover bg-center bg-no-repeat min-h-[100dvh];
+    background-image: url("/assets/image/home-banner1.webp");
+  }
+
+  .were-here-to-help {
+    @apply py-8 lg:py-0 px-4 lg:px-0 lg:h-[950px] lg:pt-[121px] lg:pb-[149px];
+  }
+
+  .start-journey {
+    @apply bg-cover bg-center bg-no-repeat lg:min-h-[394px] lg:px-[234px] flex flex-col lg:flex-row justify-between items-center p-4 lg:p-0;
+    background-image: url("/assets/image/start-journey-banner.webp");
+  }
+
+  .secure-business-left {
+    @apply bg-cover bg-center bg-no-repeat w-[917px] rounded-[15px];
+    background-image: url("/assets/image/left-banner2.webp");
+  }
+
+  .secure-business-right {
+    @apply bg-cover bg-center bg-no-repeat w-[650px] flex-1 rounded-[15px] p-[16px] lg:p-[31px];
+    background-image: url("/assets/image/bg-shape.webp");
+  }
+
+  .container-monthly-deal {
+    @apply bg-cover bg-center bg-no-repeat min-h-[725px] px-[190px] flex justify-between items-center gap-[158px];
+    background-image: url("/assets/image/bg-monthly-deals.webp");
+  }
+
+  .bg-image-container {
+    @apply bg-cover bg-center bg-no-repeat w-[650px];
+    background-image: url("/assets/image/bg-shape.webp");
+  }
+
+  .contact-agent {
+    @apply bg-cover bg-center bg-no-repeat w-full flex-1 rounded-[15px] p-[31px];
+    background-image: url("/assets/image/bg-shape.webp");
+  }
+
+  .sidebar-button {
+    @apply border border-white rounded-lg w-full py-[8px] text-start hover:border-gray-300;
+  }
+
+  .background-dashboard {
+    @apply bg-[#F9F3EF];
+  }
+
+  .sidebar-selected {
+    @apply bg-red-800 text-white rounded-lg w-full py-[8px] text-start;
+  }
+
+  .toast-error {
+    @apply bg-[rgb(var(--red-error))] text-[rgba(0,0,0,0.54)];
+  }
+
+  .pagination-prev {
+    @apply relative inline-flex items-center rounded-l-md px-4 py-4 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0;
+  }
+
+  .pagination-next {
+    @apply relative inline-flex items-center rounded-r-md px-4 py-4 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0;
+  }
+
+  .pagination-numbered {
+    @apply relative inline-flex items-center px-5 py-4 font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0;
+  }
+
+  .pagination-selected {
+    @apply relative z-10 inline-flex items-center bg-blue-950 px-5 py-4 font-semibold text-white focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 pointer-events-none;
+  }
+
+  .pagination-span {
+    @apply relative inline-flex items-center px-5 py-4 font-semibold text-gray-700 ring-1 ring-gray-300 ring-inset focus:outline-offset-0;
+  }
+
+  .input-file {
+    @apply appearance-none border border-black rounded-l-lg w-full py-[14px] px-[25px] mt-2 leading-tight focus:outline-none;
+  }
+
+  .border-separator {
+    @apply bg-gradient-to-b from-transparent via-gray-300 to-transparent bg-[length:100%_1px] bg-no-repeat bg-bottom;
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+html {
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125vw;
+  height: 125vh;
+  overflow-x: hidden;
+}
+
+/* Untuk semua device dengan lebar kecil */
+@media (max-width: 1279px) {
+  html {
+    transform: none;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Pastikan body juga tidak bisa scroll horizontal */
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
